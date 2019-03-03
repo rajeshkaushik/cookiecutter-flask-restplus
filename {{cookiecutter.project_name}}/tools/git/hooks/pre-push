@@ -1,0 +1,8 @@
+#!/bin/sh
+
+set -xe
+
+pipenv run coverage run -m pytest {{cookiecutter.app_name}}
+pipenv run coverage report --omit='*lib/*.py,*test_*.py' --fail-under=90
+
+#exit 0

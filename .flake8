@@ -1,0 +1,20 @@
+[flake8]
+ignore =
+    D203, # 1 blank line required before class docstring
+    D211, # No blank lines allowed before class docstring
+    F812, # list comprehension redefines ...
+    F401, # unused imports (because mypy type hint imports will be flaged)
+exclude =
+    # No need to traverse our git directory
+    .git,
+    # There's no value in checking cache directories
+    __pycache__,
+    # tests directory
+    tests,
+    test_*,
+    .venv/*
+
+max-complexity = 10
+
+# as per github standards
+max-line-length = 119

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+set -xe
+
+pipenv run flake8 {{cookiecutter.app_name}}
+pipenv run mypy {{cookiecutter.app_name}}

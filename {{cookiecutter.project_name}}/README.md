@@ -1,30 +1,4 @@
 Flask RestPlus microservice template
-# cookiecutter-flask-restplus
-
-Cookiecutter template for flask restplus microservice including swagger docs, namespaces, test setup and more
-## Introduction
-This cookie cutter is a very simple boilerplate for starting a REST api using Flask-RestPlus
-
-Features
-* Standardise the best practices across python projects
-* Quick start of new project
-* Organised project structure
-* Health-check endpoint
-* Test setup
-* Test coverage
-* Sonar-cube integration details
-* Git hooks
-* Deployment files:   Docekrfile, wigs.py, gunicorn_config.py
-* Pipenv for stable releases
-
-Config option available for
-* Basic APIKEY authorization
-* New-relic integration
-* Custom error response format
-* slack integration for error logs
-* Swagger docs
-
-## Usage details
 
 ## Environment variables
 
