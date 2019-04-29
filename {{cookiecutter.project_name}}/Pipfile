@@ -16,7 +16,9 @@ ipdb = "*"
 flask-restplus = "*"
 gunicorn = "*"
 newrelic = "*"
+{% if cookiecutter.slackclient == 'y' %}
 slackclient = '*'
+{% endif %}
 
 [requires]
 python_version = "3.7.2"

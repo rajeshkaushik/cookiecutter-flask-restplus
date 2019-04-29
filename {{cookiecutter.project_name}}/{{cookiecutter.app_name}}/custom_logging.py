@@ -1,6 +1,6 @@
 import logging
 
-
+{% if cookiecutter.slackclient == 'y' %}
 class SlackLogHandler(logging.Handler):
 
     def __init__(self, token, channel):
@@ -18,18 +18,21 @@ class SlackLogHandler(logging.Handler):
             channel=self.channel,
             text=self.format(record)
         )
+{% endif %}
 
 
 def get_custom_formatter(config):
     return logging.Formatter(config.LOG_FORMAT)
 
 
+{% if cookiecutter.slackclient == 'y' %}
 def get_slack_error_handler(config):
     formatter = get_custom_formatter(config)
     handler = SlackLogHandler(config.SLACK_TOKEN, config.SLACK_CHANNEL)
     handler.setLevel(logging.ERROR)
     handler.setFormatter(formatter)
     return handler
+{% endif %}
 
 
 def format_headers(headers, excludes=[]):

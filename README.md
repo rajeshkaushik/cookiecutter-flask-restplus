@@ -21,7 +21,9 @@ Config option available for
 * Basic APIKEY authorization
 * New-relic integration
 * Custom error response format
+{% if cookiecutter.slackclient == 'y' %}
 * slack integration for error logs
+{% endif %}
 * Swagger docs
 
 ## Usage details
