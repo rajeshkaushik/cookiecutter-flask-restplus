@@ -40,12 +40,13 @@ def create_app(config_name):
     from {{cookiecutter.app_name}}.custom_logging import get_custom_formatter
     formatter = get_custom_formatter(config)
     default_handler.setFormatter(formatter)
-
+    {% if cookiecutter.slackclient == 'y' %}
     # Enable error logs push to configured slack channel
     if app.config.get('SLACK_TOKEN') and app.config.get('SLACK_CHANNEL'):
         from {{cookiecutter.app_name}}.custom_logging import get_slack_error_handler
         handler = get_slack_error_handler(config)
         app.logger.addHandler(handler)
+    {% endif %}
 
     app.logger.setLevel(app.config['APP_LOG_LEVEL'])
 

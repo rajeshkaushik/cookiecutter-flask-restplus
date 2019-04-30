@@ -6,7 +6,10 @@ from flask.logging import default_handler
 from unittest.mock import patch
 
 from {{cookiecutter.app_name}}.tests.conftest import AppTestCase
+
+{% if cookiecutter.slackclient == 'y' %}
 from {{cookiecutter.app_name}}.custom_logging import SlackLogHandler
+{% endif %}
 
 
 class CustomLogTestCase(AppTestCase):
@@ -17,5 +20,7 @@ class CustomLogTestCase(AppTestCase):
     def test_custom_log_level(self):
         self.assertEqual(current_app.config['APP_LOG_LEVEL'], current_app.logger.level)
 
-    def test_slack_log_handler(self):
-        self.assertEqual(current_app.logger.handlers[0].__class__, SlackLogHandler)
+    {% if cookiecutter.slackclient == 'y' %}
+        def test_slack_log_handler(self):
+            self.assertEqual(current_app.logger.handlers[0].__class__, SlackLogHandler)
+    {% endif %}
