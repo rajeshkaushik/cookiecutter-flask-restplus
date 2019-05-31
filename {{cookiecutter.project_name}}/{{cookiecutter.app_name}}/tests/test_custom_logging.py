@@ -7,9 +7,9 @@ from unittest.mock import patch
 
 from {{cookiecutter.app_name}}.tests.conftest import AppTestCase
 
-{% if cookiecutter.slackclient == 'y' %}
+{%- if cookiecutter.slackclient == 'y' -%}
 from {{cookiecutter.app_name}}.custom_logging import SlackLogHandler
-{% endif %}
+{%- endif -%}
 
 
 class CustomLogTestCase(AppTestCase):

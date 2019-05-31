@@ -13,12 +13,18 @@ pyannotate = "*"
 ipdb = "*"
 
 [packages]
+{%- if cookiecutter.flask-restplus == 'y' %}
 flask-restplus = "*"
+{%- endif %}
+{%- if cookiecutter.gunicorn == 'y' %}
 gunicorn = "*"
+{%- endif %}
+{%- if cookiecutter.newrelic == 'y' %}
 newrelic = "*"
-{% if cookiecutter.slackclient == 'y' %}
+{%- endif %}
+{%- if cookiecutter.slackclient == 'y' %}
 slackclient = '*'
-{% endif %}
+{%- endif %}
 
 [requires]
 python_version = "3.7.2"

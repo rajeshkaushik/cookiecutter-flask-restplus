@@ -1,5 +1,8 @@
 {
     "project_name": "restplus_api",
     "app_name": "myapi",
+    "flask-restplus":"n",
+    "gunicorn":"n",
+    "newrelic":"n",
     "slackclient": "n"
 }
